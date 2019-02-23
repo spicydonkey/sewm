@@ -1,8 +1,0 @@
-function [SEMw, Mw] = sewm(x,w)
-% Standard error of a weighted mean
-% 
-% I N P U T
-%   x:  N-length vector of random variables
-%   w:  N-length vector of 
-
-end
