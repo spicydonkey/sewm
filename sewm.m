@@ -21,20 +21,21 @@ function [SEMw, Mw] = sewm(x,w)
 % DKS
 % 2019-02-23
 
-Mw = sum(w.*x);     
+
 n = length(x);      % number of samples
 w_sum = sum(w);     
 w_sqrd = w.^2;      
+Mw = sum(w.*x)/w_sum;     
 % w_mean = mean(w);   % mean of weights
 
 % % formula as in Gatz and Smith
-% SEMw = n/((n-1)*w_sum^2) * ( sum( (w.*x - w_mean*Mw).^2 )   ...
+% SEMw = sqrt( n/((n-1)*w_sum^2) * ( sum( (w.*x - w_mean*Mw).^2 )   ...
 %     - 2*Mw*sum( (w - w_mean).*(w.*x - w_mean*Mw) ) ...
-%     + Mw^2 * sum( (w - w_mean).^2 ) );
+%     + Mw^2 * sum( (w - w_mean).^2 ) ) );
 
 % formula in a computationally friendly form [stackexchange forum]
-SEMw = n/((n-1)*w_sum^2) * ( sum( (w_sqrd.*x.^2) ) ...
+SEMw = sqrt( n/((n-1)*w_sum^2) * ( sum( (w_sqrd.*x.^2) ) ...
                             - 2*Mw*sum( w_sqrd.*x ) ...
-                            + Mw^2*sum( w_sqrd ) );
+                            + Mw^2*sum( w_sqrd ) ) );
 
 end
