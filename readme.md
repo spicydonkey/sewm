@@ -1,5 +1,5 @@
 # SEWM - standard error of a weighted mean
-**[David K. Shin](https://github.com/spicydonkey)**
+**[David K. Shin](https://github.com/spicydonkey)**  
 **Status:** This Code is **ready to be used in your project**. Unit Testing **is implemented**.
 
 ## Method
