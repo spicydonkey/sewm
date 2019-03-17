@@ -1,4 +1,5 @@
 # SEWM - standard error of a weighted mean
+**Status:** This Code is **ready to be used in your project**. Unit Testing **is implemented**.
 
 ## Method
 Follows a formula by Cochran (1977), tested against the bootstrap method by Gatz and Smith (1995).
